@@ -52,16 +52,31 @@ function show(req,res){
       flight:flight
     
     })
-    console.log(flight)
+    // console.log(flight)
   })
   .catch(err =>{
     res.redirect('/')
   })
+}
+function edit(req,res){
+  Flight.findById(req.params.flightId)
+  .then(flight =>{
+    res.render('flights/edit',{
+      title:'Edit Flight Detail',
+      flight:flight
+    })
+  })
+  .catch(err =>{
+    res.redirect('/')
+  })
+
+
 }
 export{
   index,
   newFlight as new,
   create,
   deleteFlight as delete,
-  show
+  show,
+  edit
 }
