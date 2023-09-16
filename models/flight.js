@@ -5,17 +5,17 @@ const Schema=mongoose.Schema
 const flightSchema=new Schema({
   airline:{
     type:String,
-    enum:['American','Southwest','United'],
-    default:'N/A'
+  //   enum:['American','Southwest','United'],
+  //   default:'N/A'
   },
   airport:{
     type:String,
-    enum:['AUS','DFW','DEN','LAX','SAN'],
-    default:'DEN'
+    // enum:['AUS','DFW','DEN','LAX','SAN'],
+    // default:'DEN'
   },
   flightNo:{
     type:Number,
-     default:'N/A' 
+    //  default:'N/A' 
    
   },
   departs:{
