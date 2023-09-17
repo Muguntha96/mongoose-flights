@@ -5,23 +5,26 @@ const Schema=mongoose.Schema
 const flightSchema=new Schema({
   airline:{
     type:String,
-    enum:['American','Southwest','United'],
-    // default:'N/A'
+    enum:[`American`,`Southwest`,`United`],
+    default:'N/A'
   },
   airport:{
     type:String,
     enum:['AUS','DFW','DEN','LAX','SAN'],
-    // default:'DEN'
+    default:'DEN'
   },
   flightNo:{
     type:Number,
-    //  default:'N/A' 
+    default:'N/A' 
    
   },
   departs:{
     type:Date,
-    
-  }
+    default:function(){
+      let date = new Date()
+      return date.setFullYear(date.getFullYear() + 1)
+    }
+      }
   
 })
 

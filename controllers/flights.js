@@ -1,17 +1,22 @@
 import { Flight } from "../models/flight.js"
 import  date from "date-and-time"
-function newFlight(req,res){
-  
-  res.render('flights/new',{
-    title:"Add Flight"
-    
-  })
 
+function newFlight(req,res){
+  const newFlight = new Flight()
+  console.log(newFlight)
+  const dt=newFlight.departs
+  const adtTime=new Date(dt.getTime()-dt.getTimezoneOffset()*60000)
+  const departsDate = adtTime.toISOString().slice(0,16)
+    res.render('flights/new',{
+               title:"Add Flight",
+                departsDate
+          })
 }
 function index(req,res){
  Flight.find({})
  .then( flights =>{
-  // console.log(flight)
+  console.log(flights)
+  
   res.render('flights/index',{
     flights:flights,
     title:'All Flights'
@@ -48,9 +53,11 @@ Flight.findByIdAndDelete(req.params.flightId)
 function show(req,res){
   Flight.findById(req.params.flightId)
   .then(flight =>{
+    
     res.render('flights/show',{
       title:'Flight Detail',
-      flight:flight
+      flight:flight,
+   
     
     })
     // console.log(flight)
@@ -60,24 +67,25 @@ function show(req,res){
   })
 }
 function edit(req,res){
+  console.log(req.params.flightId)
   Flight.findById(req.params.flightId)
   .then(flight =>{
     let date = new Date(flight.departs.getTime() - flight.departs.getTimezoneOffset() * 60000)
-    let depatdate = date.toISOString().slice(0,16)
+    let depart = date.toISOString().slice(0,16)
     res.render('flights/edit',{
       title:'Edit Flight Detail',
       flight:flight,
-      deptdate : depatdate
+     depart:depart
     })
   })
   .catch(err =>{
     res.redirect('/')
   })
 }function updateFlight(req,res){
-  Flight.create(req.body)
+  Flight.findByIdAndUpdate(req.params.flightId,req.body,{new:true})
   .then(flight =>{
-    res.redirect('/flights')
-    
+    console.log(flight._id)
+    res.redirect(`${flight._id}`)
   })
   
   .catch(err => {
