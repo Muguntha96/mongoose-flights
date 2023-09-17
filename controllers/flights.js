@@ -15,10 +15,10 @@ function newFlight(req,res){
 function index(req,res){
  Flight.find({})
  .then( flights =>{
-  console.log(flights)
-  
-  res.render('flights/index',{
-    flights:flights,
+  const sortFlight=flights.sort((a,b) =>a.departs-b.departs)
+
+    res.render('flights/index',{
+      flights:sortFlight,
     title:'All Flights'
   })
  })

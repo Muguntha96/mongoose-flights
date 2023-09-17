@@ -6,7 +6,9 @@ table thead th {
   padding: 5px;
   border-bottom: 2px solid #424748;
 }
-
+.expiredRow{
+  color: red;
+}
 table td {
   padding: 10px;
   text-align: center;
@@ -33,3 +35,5 @@ table td {
 #list a:hover {
   background-color: white;
 }
+
+[data-href] { cursor: pointer; }
