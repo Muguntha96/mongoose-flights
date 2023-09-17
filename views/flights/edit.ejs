@@ -19,7 +19,7 @@
     <label for="flightno-input">FlightNo:</label>
     <input type="number" name="flightNo" id="flightno-input" min="10" max="9999" value="<%= flight.flightNo %>">
     <label for="departs-input">Departs:</label>
-    <input type="date" name="departs" id="departs-input" value="<%= flight.departs %>">
+    <input type="datetime-local" name="departs" id="departs-input" value="<%= deptdate %>">
     <button type="submit">Save Flight</button>
   </section>
 </form>

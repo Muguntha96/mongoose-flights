@@ -1,5 +1,5 @@
 import { Flight } from "../models/flight.js"
-
+import  date from "date-and-time"
 function newFlight(req,res){
   
   res.render('flights/new',{
@@ -23,9 +23,10 @@ function index(req,res){
 })
 }
 function create(req,res){
+  console.log(req.body)
  Flight.create(req.body)
 .then(flight =>{
-  res.redirect('/flights')
+   res.redirect('/flights')
   console.log(flight)
 })
 
@@ -61,16 +62,28 @@ function show(req,res){
 function edit(req,res){
   Flight.findById(req.params.flightId)
   .then(flight =>{
+    let date = new Date(flight.departs.getTime() - flight.departs.getTimezoneOffset() * 60000)
+    let depatdate = date.toISOString().slice(0,16)
     res.render('flights/edit',{
       title:'Edit Flight Detail',
-      flight:flight
+      flight:flight,
+      deptdate : depatdate
     })
   })
   .catch(err =>{
     res.redirect('/')
   })
-
-
+}function updateFlight(req,res){
+  Flight.create(req.body)
+  .then(flight =>{
+    res.redirect('/flights')
+    
+  })
+  
+  .catch(err => {
+    console.log(err)
+    res.redirect('/flights')
+  })
 }
 export{
   index,
@@ -78,5 +91,6 @@ export{
   create,
   deleteFlight as delete,
   show,
-  edit
+  edit,
+  updateFlight as update
 }
