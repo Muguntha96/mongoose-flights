@@ -7,7 +7,7 @@ form {
 select{
   font-size: large;
 }
-#save-flight{
+#add-flight{
   display: grid;
   align-items: center;
   margin-top: 40px;
@@ -18,8 +18,8 @@ select{
   height: 50px;
   padding: auto;
   font-size: large;
-}
-#add-flight:hover {
-  color:whitesmoke;
-  background-color:black;
-}
+  }
+  #add-flight:hover {
+    color:whitesmoke;
+    background-color:black;
+  }
