@@ -8,7 +8,7 @@ function newFlight(req,res){
   const adtTime=new Date(dt.getTime()-dt.getTimezoneOffset()*60000)
   const departsDate = adtTime.toISOString().slice(0,16)
     res.render('flights/new',{
-               title:"Add Flight",
+               title:"Add New Flight",
                 departsDate
           })
 }

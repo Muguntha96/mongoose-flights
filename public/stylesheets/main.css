@@ -2,19 +2,6 @@ html {
   box-sizing: border-box
 }
 
-/* The Universal Selector */
-*, /* All elements*/
-*::before, /* All ::before pseudo-elements */
-*::after { /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default
-     but can be over-ridden as needed */
-  box-sizing: inherit;
-  font-family:Mooli,sans-serif
-  /* system-ui, */
-  /* -apple-system, BlinkMacSystemFont, "Segoe UI",
-  Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
-}
-
 body {
   background-color: #2596be;
   /* Use a system font, if none are available use an available sans-sarif font */
@@ -27,6 +14,9 @@ body {
     "nav"
     "main";
   font-size: 18px;
+}
+i{
+  font-size: 40px;
 }
 
 body > main {
