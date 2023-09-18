@@ -31,26 +31,26 @@ section {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 16px;
+  margin-left: 500px;
 }
 
 section div:nth-child(even) {
   font-weight: bold;
 }
-
-#add-review-form {
+#edit-button{
   display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 16px;
-  margin-bottom: 20px;
+align-items: center;
+margin-top: 40px;
+margin-left: 80px;
+background-color: grey;
+color: black;
+width: 100px;
+height: 50px;
+padding: auto;
+font-size: large;
+  
 }
-
-#add-review-form > textarea {
-  width: 250px;
-}
-
-#add-review-form > button {
-  font-size: 16px;
-  width: 160px;
-  grid-column: 2 / 3;
-  margin-bottom: 24px;
+#edit-button:hover {
+  color:whitesmoke;
+  background-color:black;
 }
