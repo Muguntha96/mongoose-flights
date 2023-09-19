@@ -9,6 +9,7 @@ router.get('/:flightId',flightsCtrl.show)
 router.post('/',flightsCtrl.create)
 router.post('/:flightId/tickets',flightsCtrl.createTickets)
 router.delete('/:flightId',flightsCtrl.delete)
+router.delete('/:flightId/tickets/:ticketId',flightsCtrl.deleteTicket)
 router.get('/:flightId/edit',flightsCtrl.edit)
 router.put('/:flightId',flightsCtrl.update)
 
