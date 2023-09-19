@@ -3,17 +3,31 @@
 <%- include('../partials/nav') %>
 <main>
   <h1><%= title %></h1>
+  <% let total=0 %>
   <section>
     <div>Airline :</div>
-    <div><%= flight.airline %> </div>
+    <div><%= flight.airline %><a href="/flights/<%= flight._id %>/edit"><button type="submit" id="edit-button">Edit Flight</button></a></div>
     <div>Airport :</div>
     <div><%= flight.airport %></div>
     <div>FlightNo :</div>
     <div><%= flight.flightNo %></div>
     <div>Departs :</div>
     <div><%= flight.departs %></div>
-    <a href="/flights/<%= flight._id %>/edit"><button type="submit" id="edit-button">Edit Flight</button></a>
+    <div> Your meals :</div>
+    <ul>
+      <% flight.meals.forEach(ele =>{ %>
+        <li><%= ele.meal %></li>
+        <% }) %>
+    </ul>
   </section>
+  <form id="select-meal" method="POST" action="/flights/<%= flight._id %>/meals">
+    <select name="mealId">
+      <% meals.forEach(element => { %>
+       <option value="<%= element._id %>"><%= element.meal %></option>
+      <% }) %>
+    </select>
+  <button type="submit">Add your meal</button>
+  </form> 
   <form id="add-ticket-form" action="/flights/<%= flight._id %>/tickets" method="POST">
     <h2>Flight Tickets</h2>
     <label for="seat-input">Seat(s)</label>
@@ -33,7 +47,7 @@
         </tr>
       </thead>
       <tbody>
-       <% let total=0 %>
+       
         <% flight.tickets.forEach(ticket => { %>
           <% total=total+1 %>
           <tr>
@@ -54,5 +68,6 @@
     <% } else { %>
       <h3> No Tickets booked</h3>
       <%}  %>
+    
 </main>
 <%- include('../partials/footer') %>

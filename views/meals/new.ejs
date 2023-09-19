@@ -4,15 +4,15 @@
 
 <main>
   <h1><%= title %></h1>
-<p>Please select the meal
+<p>Please select the food for your meal
   <select>
     <% meals.forEach(meal => { %>
-      <option><%= meal.meals %></option>
+      <option><%= meal.meal %></option>
      
     <% }) %>
   </select>
 </p>
-<form id="add-meal" action="/meals" method="POST">
+<form id="add-meal-form" action="/meals" method="POST">
   <label for="meal-input">Meal :</label>
 <input type="text" name="meal" id="meal-input">
   <button>Add Meal</button>

@@ -4,7 +4,7 @@ const Schema=mongoose.Schema
 
 const mealSchema=new Schema(
   {
-    meals:{type:String,required:true}
+    meal:{type:String}
   },
   {timestamps:true}
 )
