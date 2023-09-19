@@ -14,14 +14,10 @@ th{
   color:#d62828;
   background-color: white;
 }
-/* tbody tr:nth-child(odd) {
- background-color: #EDBFDB;
- color: black;
+.expiredFlightBtn{
+  background-color: white;
+  color:#d62828
 }
-tbody tr:nth-child(even) {
-  background-color:#FBEFF6;
-  color: black;
-} */
 #delete-btn{
   background-color:#d62828;
   color: white;

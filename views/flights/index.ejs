@@ -6,9 +6,10 @@
       <table id="list">
         <thead>
           <tr>
-            <th>Airline</th>
-            <th>FlightNo</th>
-            <th>Departs</th>
+            <!-- <th>Airline</th> -->
+            <th>Flight Number</th>
+            <th>Flight Detail</th>
+            <!-- <th>Departs</th> -->
             <th>Delete</th>
           </tr>
         </thead>
@@ -16,16 +17,19 @@
           
           <% flights.forEach(flight=> { %>
             
-            <tr class="<%= flight.departs < new Date() ? "expiredRow" : "activeRow" %>">
+            <tr class="<%= flight.departs < new Date() ? "expiredRow" && "expiredFlightBtn" : "activeRow" %>">
+              <!-- <td><%= flight.airline %></td> -->
               <td>
-                <%= flight.airline %>
+                <!-- <a href="/flights/<%= flight._id %>"> -->
+                <%= flight.flightNo %>
+                <!-- </a> -->
               </td>
-              <td><a href="/flights/<%= flight._id %>">
-                  <%= flight.flightNo %>
-                </a></td>
-                <td>
+              <td>
+                <a href="/flights/<%= flight._id %>">Detail</a>
+              </td>
+                <!-- <td>
                   <%= flight.departs %>
-                </td>
+                </td> -->
               <td>
                 <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST">
                   <button type="submit" id="delete-btn">Delete</button>

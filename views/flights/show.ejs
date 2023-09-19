@@ -4,15 +4,49 @@
 <main>
   <h1><%= title %></h1>
   <section>
-    <div>Airline:</div>
-    <div><%= flight.airline %></div>
-    <div>Airport:</div>
+    <div>Airline :</div>
+    <div><%= flight.airline %> </div>
+    <div>Airport :</div>
     <div><%= flight.airport %></div>
-    <div>FlightNo:</div>
+    <div>FlightNo :</div>
     <div><%= flight.flightNo %></div>
-    <div>Departs:</div>
+    <div>Departs :</div>
     <div><%= flight.departs %></div>
-    <a href="/flights/<%= flight._id %>/edit"><button type="submit" id="edit-button">Edit Detail</button></a>
+    <a href="/flights/<%= flight._id %>/edit"><button type="submit" id="edit-button">Edit Flight</button></a>
   </section>
+  <form id="add-ticket-form" action="/flights/<%= flight._id %>/tickets" method="POST">
+    <h2>Flight Tickets</h2>
+    <label for="seat-input">Seat(s)</label>
+    <input name="seat" id="seat-input" required pattern="[A-F][1-9]\d?">
+    <label for="ticket-price">Price(s)</label>
+    <input name="price" id="seat-input">
+    <button type="submit">Add Ticket</button>
+  </form>
+  <% if(flight.tickets.length) {%>
+    <table>
+      <thead>
+        <tr>
+         
+          <th>Seat No</th>
+          <th>Price</th>
+          <!-- <th>Delete</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <% let total=0 %>
+        <% flight.tickets.forEach(ticket => { %>
+          <% total++ %>
+          <tr>
+            <td><%= ticket.seat %></td>
+            <td><%= ticket.price %></td>
+          </tr>
+         
+        <% }) %>
+       
+      </tbody>
+    </table>
+    <% } else { %>
+      <h3> No Tickets booked</h3>
+      <%}  %>
 </main>
 <%- include('../partials/footer') %>
