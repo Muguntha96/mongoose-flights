@@ -38,14 +38,10 @@ section div:nth-child(even) {
   font-weight: bolder;
 }
 #edit-button{
-  display: grid;
+display: grid;
 align-items: center;
-margin-top: 40px;
-margin-left: 80px;
-background-color: grey;
-color: black;
-width: 200px;
-height: 50px;
+background-color:maroon;
+color: white;
 padding: auto;
 font-size: large;
   
@@ -53,4 +49,18 @@ font-size: large;
 #edit-button:hover {
   color:whitesmoke;
   background-color:black;
+}
+#add-your-meal{
+  background-color: maroon;
+  color:white;
+}
+#add-your-meal:hover{
+  background-color: black;
+}
+#ticket-btn{
+  background-color: maroon;
+  color: white;
+}
+#ticket-btn:hover{
+  background-color: black;
 }

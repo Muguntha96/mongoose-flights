@@ -1,0 +1,19 @@
+form{
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: large;
+}
+#meal-button{
+display: flex; 
+justify-content: center;
+align-items: center;
+margin: 20px;
+width: 100px;
+background-color: maroon;
+color: white;
+}
+#meal-button:hover{
+  background-color: black;
+
+}

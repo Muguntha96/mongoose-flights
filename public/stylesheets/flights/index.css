@@ -15,10 +15,16 @@ th{
   background-color: white;
 }
 .expiredFlightBtn{
-  background-color: white;
-  color:#d62828
+    color:maroon;
 }
 #delete-btn{
   background-color:#d62828;
   color: white;
+}
+
+a{
+  color:white;
+}
+a:visited{
+  color: #90EE90;
 }
