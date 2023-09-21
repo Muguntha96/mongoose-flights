@@ -1,16 +1,16 @@
 import mongoose from "mongoose"
 
-const Schema=mongoose.Schema
+const Schema = mongoose.Schema
 
-const mealSchema=new Schema(
+const mealSchema = new Schema(
   {
-    meal:{type:String}
+    meal: { type: String }
   },
-  {timestamps:true}
+  { timestamps: true }
 )
 
-const Meal=mongoose.model('Meal',mealSchema)
+const Meal = mongoose.model('Meal', mealSchema)
 
-export{
+export {
   Meal
 }

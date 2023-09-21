@@ -4,22 +4,25 @@ form {
   grid-gap: 16px;
   font-size: x-large;
 }
-select{
+
+select {
   font-size: large;
 }
-#save-flight{
+
+#save-flight {
   display: grid;
   align-items: center;
   margin-top: 40px;
   margin-left: 80px;
-  background-color:maroon;
+  background-color: maroon;
   color: white;
   width: 200px;
   height: 50px;
   padding: auto;
   font-size: large;
 }
+
 #save-flight:hover {
-  color:whitesmoke;
-  background-color:black;
+  color: whitesmoke;
+  background-color: black;
 }

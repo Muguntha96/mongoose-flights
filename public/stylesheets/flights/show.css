@@ -37,30 +37,35 @@ section {
 section div:nth-child(even) {
   font-weight: bolder;
 }
-#edit-button{
-display: grid;
-align-items: center;
-background-color:maroon;
-color: white;
-padding: auto;
-font-size: large;
-  
-}
-#edit-button:hover {
-  color:whitesmoke;
-  background-color:black;
-}
-#add-your-meal{
+
+#edit-button {
+  display: grid;
+  align-items: center;
   background-color: maroon;
-  color:white;
+  color: white;
+  padding: auto;
+  font-size: large;
 }
-#add-your-meal:hover{
+
+#edit-button:hover {
+  color: whitesmoke;
   background-color: black;
 }
-#ticket-btn{
+
+#add-your-meal {
   background-color: maroon;
   color: white;
 }
-#ticket-btn:hover{
+
+#add-your-meal:hover {
+  background-color: black;
+}
+
+#ticket-btn {
+  background-color: maroon;
+  color: white;
+}
+
+#ticket-btn:hover {
   background-color: black;
 }

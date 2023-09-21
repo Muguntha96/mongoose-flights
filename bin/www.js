@@ -29,12 +29,12 @@ function normalizePort(val) {
 }
 
 // event listener for HTTP server error event
-function onError(error) { 
+function onError(error) {
   if (error.syscall !== 'listen') {
     throw error
   }
 
-  const bind = typeof port === 'string'? `Pipe ${port}`: `Port ${port}`
+  const bind = typeof port === 'string' ? `Pipe ${port}` : `Port ${port}`
 
   // handle specific listen errors with friendly messages
   switch (error.code) {

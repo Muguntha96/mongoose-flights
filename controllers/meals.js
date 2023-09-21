@@ -1,33 +1,31 @@
 import { Meal } from "../models/meal.js"
 
-function newMeal (req,res){
+function newMeal(req, res) {
   Meal.find({})
-  .then(meals =>{
-    res.render('meals/new',{
-      meals:meals,
-      title:'Add Meal'
+    .then(meals => {
+      res.render('meals/new', {
+        meals: meals,
+        title: 'Add Meal'
+      })
     })
-  })
-  .catch(err =>{
-    console.log(err)
-    res.redirect('/movies')
-  })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/movies')
+    })
 }
-function create(req,res){
-  console.log(req.body)
+function create(req, res) {
   Meal.create(req.body)
-  .then(meal => {
-    console.log(meal)
-    res.redirect('/meals/new')
-  })
-  .catch(err =>{
-    console.log(err)
-    res.redirect('/flights')
-  })
+    .then(meal => {
+      res.redirect('/meals/new')
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/flights')
+    })
 
 }
 
-export{
+export {
   newMeal as new,
   create
 }

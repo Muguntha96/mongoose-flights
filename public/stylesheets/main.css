@@ -4,7 +4,6 @@ html {
 
 body {
   background-color: gray;
-  /* Use a system font, if none are available use an available sans-sarif font */
   margin: 0;
   color: #424748;
   min-height: 100vh;
@@ -13,43 +12,44 @@ body {
   grid-template-areas:
     "nav"
     "main";
-    font-family: 'Mooli', sans-serif;
+  font-family: 'Mooli', sans-serif;
   font-size: 18px;
 }
-i{
+
+i {
   font-size: 40px;
 }
 
-body > main {
+body>main {
   grid-area: main;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color:gray;
+  background-color: gray;
   color: white;
   padding: 20px;
 }
 
-body > main h1:first-child {
+body>main h1:first-child {
   margin-bottom: 50px;
 }
 
-body > nav {
+body>nav {
   grid-area: nav;
-  background-color:#90EE90;
+  background-color: #90EE90;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 0 20px 0 30px;
 }
 
-nav > i {
+nav>i {
   width: 34px;
   object-fit: contain;
   margin-right: auto;
 }
 
-nav > a {
+nav>a {
   margin: 20px;
   text-decoration: none;
   padding: 10px;
@@ -57,16 +57,15 @@ nav > a {
   color: #424748;
 }
 
-nav > a:visited {
+nav>a:visited {
   color: #424748;
 }
 
-nav > a:hover {
+nav>a:hover {
   color: white;
   background-color: #424748;
 }
 
-nav > a.active {
+nav>a.active {
   color: red;
 }
-
